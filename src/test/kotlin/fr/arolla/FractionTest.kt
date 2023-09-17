@@ -47,4 +47,12 @@ class FractionTest {
         val result = left.sum(right)
         assertThat(result).isEqualTo(Fraction(7,5))
     }
+
+    @Test
+    internal fun `sum with 2 different dem`() {
+        val left = Fraction(3,5)
+        val right = Fraction(4,7)
+        val result = left.sum(right)
+        assertThat(result).isEqualTo(Fraction(4*5+3*7,5*7))
+    }
 }
