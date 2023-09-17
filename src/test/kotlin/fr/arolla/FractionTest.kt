@@ -55,4 +55,10 @@ class FractionTest {
         val result = left.sum(right)
         assertThat(result).isEqualTo(Fraction(4*5+3*7,5*7))
     }
+
+    @Test
+    internal fun `reduce when doable`() {
+        val fraction = Fraction(4,2)
+        assertThat(fraction.getValue()).isEqualTo(Fraction(2,1))
+    }
 }
