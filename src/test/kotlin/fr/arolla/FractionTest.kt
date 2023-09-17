@@ -39,4 +39,12 @@ class FractionTest {
         val secondResult = fraction.sum(one)
         assertThat(firstResult).isEqualTo(secondResult)
     }
+
+    @Test
+    internal fun `when the 2 dem are equals we just add the num`() {
+        val left = Fraction(3,5)
+        val right = Fraction(4,5)
+        val result = left.sum(right)
+        assertThat(result).isEqualTo(Fraction(7,5))
+    }
 }
