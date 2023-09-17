@@ -11,4 +11,12 @@ class FractionTest {
         assertThat(frac.num).isEqualTo(1)
         assertThat(frac.dem).isEqualTo(1)
     }
+
+    @Test
+    internal fun `the sum of  two fraction is a fraction`() {
+        val firstFraction = Fraction(1,1)
+        val secondFraction = Fraction(1,1)
+        val result = firstFraction.sum(secondFraction)
+        assertThat(result::class).isEqualTo(Fraction::class)
+    }
 }
