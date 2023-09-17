@@ -1,8 +1,7 @@
 package fr.arolla
 
-import org.assertj.core.api.Assertions.`as`
-import org.junit.jupiter.api.Test
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 class FractionTest {
 
@@ -26,5 +25,13 @@ class FractionTest {
         val one = Fraction(1,1)
         val two = one.sum(one)
         assertThat(two).isEqualTo(Fraction(2,1))
+    }
+
+    @Test
+    internal fun `can add a real fraction to 1`() {
+        val one = Fraction(1,1)
+        val fraction  = Fraction(1,4)
+        val result = one.sum(fraction)
+        assertThat(result).isEqualTo(Fraction(5,4))
     }
 }
