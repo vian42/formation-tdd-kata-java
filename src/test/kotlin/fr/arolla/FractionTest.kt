@@ -31,4 +31,12 @@ class FractionTest {
         val result = one.sum(fraction)
         assertThat(result).isEqualTo(Fraction(5, 4))
     }
+
+    @Test
+    internal fun `the sum is idempotent`() {
+        val fraction = Fraction(1, 4)
+        val firstResult = one.sum(fraction)
+        val secondResult = fraction.sum(one)
+        assertThat(firstResult).isEqualTo(secondResult)
+    }
 }

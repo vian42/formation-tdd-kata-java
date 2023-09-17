@@ -5,6 +5,9 @@ data class Fraction(val num: Int, val dem: Int) {
         if (this.dem == 1){
             return Fraction(this.num + fraction.dem, fraction.dem)
         }
+        if (fraction.dem == 1) {
+            return fraction.sum(this)
+        }
         return Fraction(this.num + fraction.num, this.dem)
     }
 }
