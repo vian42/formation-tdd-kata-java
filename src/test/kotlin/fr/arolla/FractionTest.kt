@@ -1,5 +1,6 @@
 package fr.arolla
 
+import org.assertj.core.api.Assertions.`as`
 import org.junit.jupiter.api.Test
 import org.assertj.core.api.Assertions.assertThat
 
@@ -18,5 +19,12 @@ class FractionTest {
         val secondFraction = Fraction(1,1)
         val result = firstFraction.sum(secondFraction)
         assertThat(result::class).isEqualTo(Fraction::class)
+    }
+
+    @Test
+    internal fun `the sum of 1 plus 1 return 2`() {
+        val one = Fraction(1,1)
+        val two = one.sum(one)
+        assertThat(two).isEqualTo(Fraction(2,1))
     }
 }
