@@ -16,4 +16,13 @@ public class LeapYearTest {
 
         assertThat(isLeap).isFalse();
     }
+
+    @Test
+    void the_year_2024_is_a_leap_year() {
+        Integer year = 2024;
+
+        Boolean isLeap = YearUtil.isLeap(year);
+
+        assertThat(isLeap).isTrue();
+    }
 }
