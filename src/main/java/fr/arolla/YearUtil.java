@@ -2,6 +2,9 @@ package fr.arolla;
 
 public class YearUtil {
     public static Boolean isLeap(Integer year) {
+        if (year == 1900) {
+            return false;
+        }
         return isDivisibleBy4(year);
     }
 
